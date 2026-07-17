@@ -50,7 +50,7 @@ export function AppSidebar() {
         <img
           src={merocketpostlaunch}
           alt="Me holding rocket"
-          className="p-2 rounded-4xl shadow"
+          className="h-80 w-full object-cover object-center p-2 rounded-4xl shadow"
         />
         <Select value={selected} onValueChange={handleSelect}>
           <SelectTrigger className="w-full">
