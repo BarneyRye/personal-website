@@ -1,6 +1,5 @@
 import type { ErrorComponentProps } from '@tanstack/react-router'
-import { Link } from '@tanstack/react-router'
-import { Button } from '@/components/ui/button'
+import { HomeButton } from '@/components/home-button'
 
 export function RouteError({ error }: ErrorComponentProps) {
   return (
@@ -10,9 +9,7 @@ export function RouteError({ error }: ErrorComponentProps) {
       <pre className="max-w-full overflow-x-auto rounded-md bg-muted p-4 text-left text-sm">
         {error.message}
       </pre>
-      <Button asChild>
-        <Link to="/">Return back to home</Link>
-      </Button>
+      <HomeButton />
     </div>
   )
 }

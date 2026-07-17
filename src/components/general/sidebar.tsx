@@ -1,5 +1,4 @@
 import { Link, useLocation, useNavigate } from '@tanstack/react-router'
-import { useState } from 'react'
 import { ThemeSwitcher } from '@/components/theme/theme-switcher'
 import {
   Select,
@@ -33,11 +32,10 @@ function getCurrentNav(path: string): string {
 export function AppSidebar() {
   const path = useLocation().pathname
   const navigate = useNavigate()
-  const [selected, setSelected] = useState(getCurrentNav(path))
+  const selected = getCurrentNav(path)
   const section = navigation.find((item) => item.name === selected)
 
   const handleSelect = (name: string) => {
-    setSelected(name)
     const target = navigation.find((item) => item.name === name)
     if (target?.to) {
       navigate({ to: target.to })

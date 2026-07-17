@@ -92,6 +92,11 @@ export const navigation: Nav[] = [
     icon: Users2Icon,
     sub_nav: [
       {
+        name: 'Home',
+        to: '/team',
+        icon: HomeIcon,
+      },
+      {
         name: 'Seadream Rocketry',
         to: '/team/seadream',
         icon: RocketIcon,
@@ -114,6 +119,11 @@ export const navigation: Nav[] = [
     to: '/uni',
     icon: UniversityIcon,
     sub_nav: [
+      {
+        name: 'Home',
+        to: '/uni',
+        icon: HomeIcon,
+      },
       {
         name: 'Glider',
         to: '/uni/glider',
