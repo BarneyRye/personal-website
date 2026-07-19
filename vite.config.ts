@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  server: {
+    port: Number(process.env.PORT) ?? 3000,
+  },
   base: process.env.BASE_PATH ?? '/',
   plugins: [
     tanstackRouter({

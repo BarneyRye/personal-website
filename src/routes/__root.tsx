@@ -8,6 +8,7 @@ import { FileCog } from 'lucide-react'
 import { AppFooter } from '@/components/general/footer'
 import { AppSidebar } from '@/components/general/sidebar'
 import { NotFound } from '@/components/redirects/not-found'
+import { RouteError } from '@/components/redirects/route-error'
 import {
   SidebarInset,
   SidebarProvider,
@@ -46,4 +47,5 @@ function RootLayout() {
 export const Route = createRootRouteWithContext<RouterContext>()({
   component: RootLayout,
   notFoundComponent: NotFound,
+  errorComponent: RouteError,
 })
