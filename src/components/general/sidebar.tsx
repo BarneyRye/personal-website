@@ -58,7 +58,7 @@ export function AppSidebar() {
             {navigation.map(({ name, icon: Icon }) => (
               <SelectItem key={name} value={name}>
                 <span className="flex items-center gap-2">
-                  {Icon ? <Icon className="size-4" /> : null}
+                  {Icon && <Icon className="size-4" />}
                   {name}
                 </span>
               </SelectItem>
@@ -81,7 +81,7 @@ export function AppSidebar() {
                         activeOptions={{ exact: true }}
                         activeProps={{ 'data-active': true }}
                       >
-                        {item.icon ? <item.icon className="size-4" /> : null}
+                        {item.icon && <item.icon className="size-4" />}
                         {item.name}
                       </Link>
                     ) : (

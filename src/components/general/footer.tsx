@@ -40,9 +40,6 @@ export function AppFooter() {
             )
           })}
         </nav>
-        <p className="text-sm text-muted-foreground">
-          Aerospace engineering student at the University of Sheffield
-        </p>
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Barnaby Rye
         </p>
