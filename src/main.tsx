@@ -7,7 +7,8 @@ import { ThemeProvider } from '@/components/theme/theme-provider'
 import '@fontsource-variable/ibm-plex-sans/index.css'
 import '@fontsource/ibm-plex-mono/400.css'
 import '@fontsource/ibm-plex-mono/500.css'
-import './index.css'
+import './styles.css'
+import { NotFound } from '@/components/redirects/not-found'
 import { routeTree } from './routeTree.gen'
 
 const queryClient = new QueryClient()
@@ -19,6 +20,7 @@ const router = createRouter({
   defaultPreload: 'intent',
   scrollRestoration: true,
   defaultErrorComponent: RouteError,
+  defaultNotFoundComponent: NotFound,
 })
 
 declare module '@tanstack/react-router' {

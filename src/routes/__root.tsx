@@ -23,6 +23,4 @@ function RootLayout() {
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   component: RootLayout,
-  notFoundComponent: NotFound,
-  errorComponent: RouteError,
 })
