@@ -1,10 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { UnderConstruction } from '@/components/redirects/under-construction'
+import { SectionIndex } from '@/components/general/section-index'
+import { sectionByPath } from '@/lib/nav'
 
 export const Route = createFileRoute('/uni/')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  return <UnderConstruction />
+  return <SectionIndex section={sectionByPath('/uni')} />
 }

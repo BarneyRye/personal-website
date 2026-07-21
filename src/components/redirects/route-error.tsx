@@ -3,7 +3,7 @@ import { HomeButton } from '@/components/home-button'
 
 export function RouteError({ error }: ErrorComponentProps) {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-4 p-48 text-center">
+    <div className="flex flex-1 flex-col items-center justify-center gap-4 py-48 px-6 text-center">
       <h1 className="-mb-6 flex font-bold text-9xl">500</h1>
       <h1 className="flex text-5xl">Something Went Wrong</h1>
       {error.message.length > 0 && (
