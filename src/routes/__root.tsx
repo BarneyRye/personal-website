@@ -2,8 +2,7 @@ import type { QueryClient } from '@tanstack/react-query'
 import { createRootRouteWithContext, Outlet } from '@tanstack/react-router'
 import { AppFooter } from '@/components/general/footer'
 import { AppNavbar } from '@/components/general/navbar'
-import { NotFound } from '@/components/redirects/not-found'
-import { RouteError } from '@/components/redirects/route-error'
+import { HomeButton } from '@/components/home-button'
 
 interface RouterContext {
   queryClient: QueryClient
@@ -17,6 +16,9 @@ function RootLayout() {
         <Outlet />
       </main>
       <AppFooter />
+      <div className="fixed right-4 bottom-6 z-50 print:hidden">
+        <HomeButton text="Home" />
+      </div>
     </div>
   )
 }
