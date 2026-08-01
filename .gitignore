@@ -12,3 +12,5 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/public/glider/glider_video.mp4
