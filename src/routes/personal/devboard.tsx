@@ -10,6 +10,7 @@ import {
   type Spec,
 } from '@/components/project'
 import wizboardpcbcolour from '@/public/wizboard/wizboardpcbcolour.webp'
+import wizboardsch from '@/public/wizboard/wizboardsch.webp'
 
 export const Route = createFileRoute('/personal/devboard')({
   component: RouteComponent,
@@ -103,6 +104,13 @@ function RouteComponent() {
           entry.
         </p>
       </ProjectSection>
+
+      <ProjectFigure
+        src={wizboardsch}
+        alt="WizBoard SCH layout"
+        caption="Full WizBoard schematic with MCU, power, debug and connectors. Including a short description in the top left."
+        sheet
+      />
 
       <ProjectSection title="A template to start from">
         <p>
