@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { PageHeader } from '@/components/page-header'
-import meskiing from '@/public/meskiing.webp'
-import polome from '@/public/polome.webp'
+import meskiing from '@/public/meskiing-sm.webp'
+import polome from '@/public/polome-sm.webp'
 
 export const Route = createFileRoute('/home/about')({
   component: RouteComponent,
@@ -48,6 +48,7 @@ function RouteComponent() {
         <img
           src={polome}
           alt="Barnaby Rye"
+          decoding="async"
           className="order-first w-full shrink-0 rounded-lg sm:order-last sm:w-52"
         />
       </div>
@@ -76,6 +77,8 @@ function RouteComponent() {
         <img
           src={meskiing}
           alt="Barnaby Rye skiing"
+          loading="lazy"
+          decoding="async"
           className="order-first w-full shrink-0 rounded-lg sm:w-52"
         />
       </section>

@@ -5,6 +5,9 @@ import sharp from 'sharp'
 const ROOT = 'src/public'
 const MAX_WIDTH = 1600
 const PHOTO_QUALITY = 82
+const GRAPHIC_QUALITY = 85
+const SMALL_WIDTH = 640
+const SMALL_QUALITY = 80
 const SOURCE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg'])
 
 const GRAPHIC_FLAT_RUN = 0.42
@@ -49,10 +52,11 @@ async function isGraphic(source: string): Promise<boolean> {
   return identical / compared > GRAPHIC_FLAT_RUN
 }
 
-async function isUpToDate(source: string, target: string): Promise<boolean> {
+async function isUpToDate(source: string, targets: string[]): Promise<boolean> {
   try {
-    const [from, to] = await Promise.all([stat(source), stat(target)])
-    return to.mtimeMs >= from.mtimeMs
+    const from = await stat(source)
+    const stats = await Promise.all(targets.map((target) => stat(target)))
+    return stats.every((to) => to.mtimeMs >= from.mtimeMs)
   } catch {
     return false
   }
@@ -70,26 +74,36 @@ for await (const source of walk(ROOT)) {
   if (!SOURCE_EXTENSIONS.has(extname(source).toLowerCase())) continue
 
   const target = source.replace(/\.(png|jpe?g)$/i, '.webp')
+  const smallTarget = source.replace(/\.(png|jpe?g)$/i, '-sm.webp')
 
-  if (await isUpToDate(source, target)) {
+  if (await isUpToDate(source, [target, smallTarget])) {
     skipped += 1
     continue
   }
 
   const graphic = await isGraphic(source)
+  const quality = graphic ? GRAPHIC_QUALITY : PHOTO_QUALITY
 
   await sharp(source)
     .resize({ width: MAX_WIDTH, withoutEnlargement: true })
-    .webp(graphic ? { lossless: true } : { quality: PHOTO_QUALITY })
+    .webp({ quality, effort: 6, smartSubsample: graphic })
     .toFile(target)
+
+  await sharp(source)
+    .resize({ width: SMALL_WIDTH, withoutEnlargement: true })
+    .webp({ quality: SMALL_QUALITY, effort: 6, smartSubsample: graphic })
+    .toFile(smallTarget)
 
   const before = (await stat(source)).size
   const after = (await stat(target)).size
+  const small = (await stat(smallTarget)).size
   totalBefore += before
-  totalAfter += after
+  totalAfter += after + small
 
-  const mode = graphic ? 'lossless' : `q${PHOTO_QUALITY}`
-  console.log(`${source}\n  ${mb(before)} -> ${mb(after)}  [${mode}]`)
+  const mode = graphic ? 'graphic' : 'photo'
+  console.log(
+    `${source}\n  ${mb(before)} -> ${mb(after)} + ${mb(small)} @${SMALL_WIDTH}px  [${mode} q${quality}]`,
+  )
 }
 
 if (skipped > 0) console.log(`${skipped} already up to date`)

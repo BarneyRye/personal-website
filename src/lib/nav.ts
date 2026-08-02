@@ -1,8 +1,8 @@
 import type { LinkProps } from '@tanstack/react-router'
-import merocketpostlaunch from '@/public/grouprocket/merocketpostlaunch.webp'
-import takeoff from '@/public/grouprocket/takeoff.webp'
-import seadreamrocketfirst from '@/public/seadream/seadreamrocketfirst.webp'
-import wizboardpcbgray from '@/public/wizboard/wizboardpcbgray.webp'
+import merocketpostlaunch from '@/public/grouprocket/merocketpostlaunch-sm.webp'
+import takeoff from '@/public/grouprocket/takeoff-sm.webp'
+import seadreamrocketfirst from '@/public/seadream/seadreamrocketfirst-sm.webp'
+import wizboardpcbgray from '@/public/wizboard/wizboardpcbgray-sm.webp'
 
 export interface Project {
   name: string

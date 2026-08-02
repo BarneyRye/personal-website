@@ -35,6 +35,7 @@ export function SectionIndex({ section }: { section: Section }) {
           <img
             src={section.image}
             alt=""
+            decoding="async"
             className="order-first w-full shrink-0 rounded-lg sm:order-last sm:w-52"
           />
         )}

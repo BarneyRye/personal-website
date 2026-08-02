@@ -84,6 +84,8 @@ export function ProjectFigure({
       <img
         src={src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         className={`w-full rounded-lg border ${sheet ? 'bg-white p-3' : ''}`}
       />
       <figcaption className="max-w-prose text-muted-foreground text-sm">

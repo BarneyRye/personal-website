@@ -9,6 +9,7 @@ import '@fontsource/ibm-plex-mono/400.css'
 import '@fontsource/ibm-plex-mono/500.css'
 import './styles.css'
 import { NotFound } from '@/components/redirects/not-found'
+import { RoutePending } from '@/components/redirects/route-pending'
 import { routeTree } from './routeTree.gen'
 
 const queryClient = new QueryClient()
@@ -17,10 +18,13 @@ const router = createRouter({
   routeTree,
   basepath: import.meta.env.BASE_URL,
   context: { queryClient },
-  defaultPreload: 'intent',
+  defaultPreload: 'viewport',
   scrollRestoration: true,
   defaultErrorComponent: RouteError,
   defaultNotFoundComponent: NotFound,
+  defaultPendingComponent: RoutePending,
+  defaultPendingMs: 150,
+  defaultPendingMinMs: 300,
 })
 
 declare module '@tanstack/react-router' {
