@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Fragment } from 'react'
+import { PageHeader } from '@/components/page-header'
 
 export const Route = createFileRoute('/home/education')({
   component: RouteComponent,
@@ -65,12 +66,7 @@ function ExtraList({ label, items }: { label: string; items: string[] }) {
 function RouteComponent() {
   return (
     <div className="space-y-12">
-      <header className="space-y-2">
-        <p className="label-mono">About</p>
-        <h1 className="max-w-prose text-balance text-3xl -mb-6">
-          My educational background
-        </h1>
-      </header>
+      <PageHeader text="My educational background" />
 
       <p className="max-w-prose text-muted-foreground">
         I am partway through an MEng in Aerospace Engineering at the University

@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { PageHeader } from '@/components/page-header'
 import meskiing from '@/public/meskiing.webp'
 import polome from '@/public/polome.webp'
 
@@ -20,12 +21,7 @@ const FOCUS_AREAS = [
 function RouteComponent() {
   return (
     <div className="space-y-12">
-      <header className="space-y-2">
-        <p className="label-mono">About</p>
-        <h1 className="max-w-prose text-balance text-3xl -mb-6">
-          Aerospace engineer with a fondness for avionics and control
-        </h1>
-      </header>
+      <PageHeader text="Aerospace engineer with a fondness for avionics and control" />
 
       <div className="flex flex-col items-start gap-8 sm:flex-row sm:gap-10">
         <div className="min-w-0 flex-1 space-y-4 text-muted-foreground [&>p]:max-w-prose">

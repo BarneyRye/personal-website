@@ -13,4 +13,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Uncompressed, so too large for github
 src/public/glider/glider_video.mp4

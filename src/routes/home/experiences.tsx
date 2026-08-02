@@ -1,4 +1,5 @@
 import { createFileRoute, Link, type LinkProps } from '@tanstack/react-router'
+import { PageHeader } from '@/components/page-header'
 
 export const Route = createFileRoute('/home/experiences')({
   component: RouteComponent,
@@ -132,12 +133,7 @@ function ExperienceList({ experiences }: { experiences: Experience[] }) {
 function RouteComponent() {
   return (
     <div className="space-y-12">
-      <header className="space-y-2">
-        <p className="label-mono">About</p>
-        <h1 className="max-w-prose text-balance text-3xl -mb-6">
-          My experiences
-        </h1>
-      </header>
+      <PageHeader text="My experiences" />
 
       <p className="max-w-prose text-muted-foreground">
         Alongside my degree I work with student teams and the university
