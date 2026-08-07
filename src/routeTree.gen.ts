@@ -17,6 +17,7 @@ import { Route as UniRocketRouteImport } from './routes/uni/rocket'
 import { Route as UniQuadcopterRouteImport } from './routes/uni/quadcopter'
 import { Route as UniGliderRouteImport } from './routes/uni/glider'
 import { Route as TeamSolotronRouteImport } from './routes/team/solotron'
+import { Route as TeamSeadreamRouteImport } from './routes/team/seadream'
 import { Route as TeamIforgeRouteImport } from './routes/team/iforge'
 import { Route as PersonalPidRouteImport } from './routes/personal/pid'
 import { Route as PersonalOscilloscopeRouteImport } from './routes/personal/oscilloscope'
@@ -25,7 +26,6 @@ import { Route as PersonalDevboardRouteImport } from './routes/personal/devboard
 import { Route as HomeExperiencesRouteImport } from './routes/home/experiences'
 import { Route as HomeEducationRouteImport } from './routes/home/education'
 import { Route as HomeAboutRouteImport } from './routes/home/about'
-import { Route as TeamSeadreamIndexRouteImport } from './routes/team/seadream/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -65,6 +65,11 @@ const UniGliderRoute = UniGliderRouteImport.update({
 const TeamSolotronRoute = TeamSolotronRouteImport.update({
   id: '/team/solotron',
   path: '/team/solotron',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamSeadreamRoute = TeamSeadreamRouteImport.update({
+  id: '/team/seadream',
+  path: '/team/seadream',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamIforgeRoute = TeamIforgeRouteImport.update({
@@ -107,11 +112,6 @@ const HomeAboutRoute = HomeAboutRouteImport.update({
   path: '/home/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamSeadreamIndexRoute = TeamSeadreamIndexRouteImport.update({
-  id: '/team/seadream/',
-  path: '/team/seadream/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -123,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
   '/personal/pid': typeof PersonalPidRoute
   '/team/iforge': typeof TeamIforgeRoute
+  '/team/seadream': typeof TeamSeadreamRoute
   '/team/solotron': typeof TeamSolotronRoute
   '/uni/glider': typeof UniGliderRoute
   '/uni/quadcopter': typeof UniQuadcopterRoute
@@ -130,7 +131,6 @@ export interface FileRoutesByFullPath {
   '/personal/': typeof PersonalIndexRoute
   '/team/': typeof TeamIndexRoute
   '/uni/': typeof UniIndexRoute
-  '/team/seadream/': typeof TeamSeadreamIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -142,6 +142,7 @@ export interface FileRoutesByTo {
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
   '/personal/pid': typeof PersonalPidRoute
   '/team/iforge': typeof TeamIforgeRoute
+  '/team/seadream': typeof TeamSeadreamRoute
   '/team/solotron': typeof TeamSolotronRoute
   '/uni/glider': typeof UniGliderRoute
   '/uni/quadcopter': typeof UniQuadcopterRoute
@@ -149,7 +150,6 @@ export interface FileRoutesByTo {
   '/personal': typeof PersonalIndexRoute
   '/team': typeof TeamIndexRoute
   '/uni': typeof UniIndexRoute
-  '/team/seadream': typeof TeamSeadreamIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -162,6 +162,7 @@ export interface FileRoutesById {
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
   '/personal/pid': typeof PersonalPidRoute
   '/team/iforge': typeof TeamIforgeRoute
+  '/team/seadream': typeof TeamSeadreamRoute
   '/team/solotron': typeof TeamSolotronRoute
   '/uni/glider': typeof UniGliderRoute
   '/uni/quadcopter': typeof UniQuadcopterRoute
@@ -169,7 +170,6 @@ export interface FileRoutesById {
   '/personal/': typeof PersonalIndexRoute
   '/team/': typeof TeamIndexRoute
   '/uni/': typeof UniIndexRoute
-  '/team/seadream/': typeof TeamSeadreamIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -183,6 +183,7 @@ export interface FileRouteTypes {
     | '/personal/oscilloscope'
     | '/personal/pid'
     | '/team/iforge'
+    | '/team/seadream'
     | '/team/solotron'
     | '/uni/glider'
     | '/uni/quadcopter'
@@ -190,7 +191,6 @@ export interface FileRouteTypes {
     | '/personal/'
     | '/team/'
     | '/uni/'
-    | '/team/seadream/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -202,6 +202,7 @@ export interface FileRouteTypes {
     | '/personal/oscilloscope'
     | '/personal/pid'
     | '/team/iforge'
+    | '/team/seadream'
     | '/team/solotron'
     | '/uni/glider'
     | '/uni/quadcopter'
@@ -209,7 +210,6 @@ export interface FileRouteTypes {
     | '/personal'
     | '/team'
     | '/uni'
-    | '/team/seadream'
   id:
     | '__root__'
     | '/'
@@ -221,6 +221,7 @@ export interface FileRouteTypes {
     | '/personal/oscilloscope'
     | '/personal/pid'
     | '/team/iforge'
+    | '/team/seadream'
     | '/team/solotron'
     | '/uni/glider'
     | '/uni/quadcopter'
@@ -228,7 +229,6 @@ export interface FileRouteTypes {
     | '/personal/'
     | '/team/'
     | '/uni/'
-    | '/team/seadream/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -241,6 +241,7 @@ export interface RootRouteChildren {
   PersonalOscilloscopeRoute: typeof PersonalOscilloscopeRoute
   PersonalPidRoute: typeof PersonalPidRoute
   TeamIforgeRoute: typeof TeamIforgeRoute
+  TeamSeadreamRoute: typeof TeamSeadreamRoute
   TeamSolotronRoute: typeof TeamSolotronRoute
   UniGliderRoute: typeof UniGliderRoute
   UniQuadcopterRoute: typeof UniQuadcopterRoute
@@ -248,7 +249,6 @@ export interface RootRouteChildren {
   PersonalIndexRoute: typeof PersonalIndexRoute
   TeamIndexRoute: typeof TeamIndexRoute
   UniIndexRoute: typeof UniIndexRoute
-  TeamSeadreamIndexRoute: typeof TeamSeadreamIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -309,6 +309,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeamSolotronRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/team/seadream': {
+      id: '/team/seadream'
+      path: '/team/seadream'
+      fullPath: '/team/seadream'
+      preLoaderRoute: typeof TeamSeadreamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/team/iforge': {
       id: '/team/iforge'
       path: '/team/iforge'
@@ -365,13 +372,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HomeAboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team/seadream/': {
-      id: '/team/seadream/'
-      path: '/team/seadream'
-      fullPath: '/team/seadream/'
-      preLoaderRoute: typeof TeamSeadreamIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -385,6 +385,7 @@ const rootRouteChildren: RootRouteChildren = {
   PersonalOscilloscopeRoute: PersonalOscilloscopeRoute,
   PersonalPidRoute: PersonalPidRoute,
   TeamIforgeRoute: TeamIforgeRoute,
+  TeamSeadreamRoute: TeamSeadreamRoute,
   TeamSolotronRoute: TeamSolotronRoute,
   UniGliderRoute: UniGliderRoute,
   UniQuadcopterRoute: UniQuadcopterRoute,
@@ -392,7 +393,6 @@ const rootRouteChildren: RootRouteChildren = {
   PersonalIndexRoute: PersonalIndexRoute,
   TeamIndexRoute: TeamIndexRoute,
   UniIndexRoute: UniIndexRoute,
-  TeamSeadreamIndexRoute: TeamSeadreamIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

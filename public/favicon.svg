@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BR">
+  <style>
+    :root { --tile: #318850; --ink: #fbfdfb; }
+    @media (prefers-color-scheme: dark) {
+      :root { --tile: #65c281; --ink: #131e17; }
+    }
+  </style>
+  <rect width="64" height="64" rx="14" fill="var(--tile)" />
+  <text
+    x="32"
+    y="43"
+    fill="var(--ink)"
+    text-anchor="middle"
+    textLength="42"
+    lengthAdjust="spacingAndGlyphs"
+    font-family="'IBM Plex Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-size="32"
+    font-weight="700"
+  >BR</text>
+</svg>

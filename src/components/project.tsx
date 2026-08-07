@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import type { IconType } from 'react-icons'
 import { FaGithub } from 'react-icons/fa'
 
 export interface Spec {
@@ -104,6 +105,28 @@ export function RepoLink({ href, label }: { href: string; label: string }) {
       className="inline-flex items-center gap-2 text-primary text-sm hover:underline"
     >
       <FaGithub className="size-4" />
+      {label}
+    </a>
+  )
+}
+
+export function ProjectLink({
+  href,
+  Icon,
+  label,
+}: {
+  href: string
+  Icon: IconType
+  label: string
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 text-primary text-sm hover:underline"
+    >
+      <Icon className="size-4" />
       {label}
     </a>
   )
