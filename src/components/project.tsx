@@ -87,12 +87,8 @@ export function ProjectFigure({
   portrait?: boolean
   poster?: string
 }) {
-  const fit = portrait
-    ? 'w-auto max-h-[calc(100svh_-_var(--header-h)_-_6rem)]'
-    : 'w-full'
-
   return (
-    <figure className={cn('space-y-3', portrait && 'mx-auto w-fit')}>
+    <figure className={cn('space-y-3', portrait && 'mx-auto w-full max-w-sm')}>
       {video ? (
         <video
           controls
@@ -100,7 +96,7 @@ export function ProjectFigure({
           preload="metadata"
           poster={poster}
           aria-label={alt}
-          className={cn('rounded-lg border bg-black', fit)}
+          className="w-full rounded-lg border bg-black"
         >
           <source src={src} type="video/mp4" />
         </video>
@@ -110,7 +106,7 @@ export function ProjectFigure({
           alt={alt}
           loading="lazy"
           decoding="async"
-          className={cn('rounded-lg border', fit, sheet && 'bg-white p-3')}
+          className={cn('w-full rounded-lg border', sheet && 'bg-white p-3')}
         />
       )}
       <figcaption className="max-w-prose text-muted-foreground text-sm">
