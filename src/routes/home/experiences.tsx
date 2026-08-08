@@ -18,7 +18,7 @@ const PROJECT_EXPERIENCES: Experience[] = [
   {
     role: 'Rep and 3D printing team member',
     org: 'iForge, University of Sheffield',
-    period: 'March 2026 - Current',
+    period: 'February 2026 - Current',
     blurb:
       'Supervising users in the makerspace, advising on manufacturing, and full-stack work on the iForge website.',
     highlights: [
@@ -42,7 +42,7 @@ const PROJECT_EXPERIENCES: Experience[] = [
   {
     role: 'Avionics',
     org: 'Seadream Rocketry',
-    period: 'September 2025 - Current',
+    period: 'November 2025 - Current',
     blurb:
       'Design, build and testing of high-powered model rockets, with a focus on the avionics.',
     highlights: [
@@ -57,7 +57,7 @@ const WORK_EXPERIENCES: Experience[] = [
   {
     role: 'Receptionist',
     org: 'Cheltenham Lido',
-    period: 'March 2024 - Current',
+    period: 'March 2025 - Current',
     blurb: 'Admissions on site, handling queries and general administration.',
     highlights: [
       'Managing admissions and ticketing for a busy public site',
@@ -78,7 +78,7 @@ const WORK_EXPERIENCES: Experience[] = [
   },
   {
     role: 'Summer internship',
-    org: 'Ultra Precion Control Systems',
+    org: 'Ultra Precision Control Systems',
     period: 'July 2022',
     blurb:
       'A week-long internship with a group of seven, introducing engineering practice and teamwork through talks with employees and a group design project.',

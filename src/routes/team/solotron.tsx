@@ -39,7 +39,7 @@ const TEAMS: Spec[] = [
 ]
 
 const GOALS: string[] = [
-  'Research and feasibility testing of converting a piston engine to run on hyrdrogen',
+  'Research and feasibility testing of converting a piston engine to run on hydrogen',
   'Design a hydrogen-powered piston engine suitable for light aircraft',
   'Design a safe testing system to run and instrument that engine on the ground',
   'Split the problem across sub-teams covering storage, delivery, combustion and forced induction',
@@ -88,12 +88,12 @@ function RouteComponent() {
 
       <ProjectSection title="Combustion Chamber team">
         <p>
-          I am apart of the Combustion Chamber Team, whos purpose it to research
-          and design the main engine chambers, crankshaft, injection and
-          exhaust. Hydrogen behaves very differently to petrol here. It burns
-          far faster, ignites at different temperatures, has a much more
-          explosive combustion. As well as thew difficulties in the chamber, we
-          also have to deal with mixing and injection. As hydrogen is alot
+          I am a part of the Combustion Chamber Team, whose purpose is to
+          research and design the main engine chambers, crankshaft, injection
+          and exhaust. Hydrogen behaves very differently to petrol here. It
+          burns far faster, ignites at different temperatures, has a much more
+          explosive combustion. As well as the difficulties in the chamber, we
+          also have to deal with mixing and injection. As hydrogen is a lot
           smaller it can find its way through gaps more easily, and due to
           releasing more energy on combustion, it is a more lean mixture.
         </p>
@@ -105,7 +105,7 @@ function RouteComponent() {
           mixing of the hydrogen and air. I look at previous petrol design and
           hydrogen research to decide on the next steps. I need to consider how
           to inject and properly mix, what pressures and state should it be at,
-          and any geometry and alteratrions need to be made.
+          and any geometry and alterations need to be made.
         </p>
       </ProjectSection>
 

@@ -7,11 +7,12 @@ import {
   ProjectStatus,
   type Spec,
 } from '@/components/project'
+import firstsustainerdd from '@/public/seadream/firstsustainerdd.mp4'
 import seadreamrocketfirst from '@/public/seadream/seadreamrocketfirst.webp'
 
 export const title = 'Two Stage'
 export const year = '2025 - 2026'
-export const start = '2025-10'
+export const start = '2025-11'
 export const duration = 500
 
 const SPEC: Spec[] = [
@@ -35,7 +36,7 @@ const SPEC: Spec[] = [
 const AVIONICS: string[] = [
   'Fluctus, COTS board with 3 pyro channels, GPS and telemetry',
   'Blue Raven, COTS board with 3 pyro channels and bluetooth for coding/short range telemetry',
-  'Custom logger, to log pressure, temperature, acceleration , gyro and humidity',
+  'Custom logger, to log pressure, temperature, acceleration, gyro and humidity',
   'RunCam, camera that points out horizontally to record flight footage',
 ]
 
@@ -46,7 +47,7 @@ const SIM: Spec[] = [
   { label: 'Max acceleration', value: '66.7 m/s2' },
   {
     label: 'Stability',
-    value: 'CG at 90.5cm and CP at 117cm, giving 3.3 calibers at Mach 0.3',
+    value: 'CG at 90.5cm and CP at 117cm, giving 3.3 calibres at Mach 0.3',
   },
 ]
 
@@ -56,7 +57,7 @@ export function Project() {
       <ProjectIntro>
         <p>
           This is Seadream's first two stage rocket, and was fundamental in
-          explortin and learning about the design and build process as a whole.
+          exploring and learning about the design and build process as a whole.
           We didn't go head first but first designing and testing each phase
           first. Sustainer on single deploy, sustainer on dual deploy then two
           stage finally.
@@ -72,6 +73,7 @@ export function Project() {
         src={seadreamrocketfirst}
         alt="First two-stage sustainer"
         caption="Seadream Rocketry's first two stage sustainer on the launch pad at MRC"
+        portrait
       />
 
       <ProjectSection title="Airframe">
@@ -83,10 +85,10 @@ export function Project() {
         </p>
         <p>
           The nose cone holds a 3D printed tip and is a hand layup using
-          fibregalss. The coupler which holds the avioncis bay sits betyween it
-          and the body tubs. The motor mount runs down an inner tube held by
+          fibreglass. The coupler which holds the avionics bay sits between it
+          and the body tubes. The motor mount runs down an inner tube held by
           four centering rings, which also carries the load from the motor into
-          the airframe rather than into the fins. The body tube is bade of
+          the airframe rather than into the fins. The body tube is made of
           carbon fibre tube for its strength-to-weight ratio.
         </p>
         <ProjectSpecs specs={SPEC} />
@@ -102,6 +104,14 @@ export function Project() {
         <ProjectList items={AVIONICS} />
       </ProjectSection>
 
+      <ProjectFigure
+        src={firstsustainerdd}
+        alt="Seadream first sustainer dual deploy video"
+        caption="Seadream's first sustainer launching with dual deploy for the first time"
+        video
+        portrait
+      />
+
       <ProjectSection title="Flight History">
         <p>
           The first flight was the sustainer on its own on a G80, flying single
@@ -114,25 +124,25 @@ export function Project() {
           dual deploy, with a drogue at apogee and the main held back until
           lower down. This was the first flight where the recovery was under the
           control of the avionics rather than the motor, so it was also the
-          first real test of the pyro channels and the altimeters. Unfortunatly,
-          our shear pins were not strong enough, so the main came out early, but
-          we still recovered successfully. We also found that the coupler was
-          blocking the GPS signal, therefore we needed to make some adjustements
-          for the next flight.
+          first real test of the pyro channels and the altimeters.
+          Unfortunately, our shear pins were not strong enough, so the main came
+          out early, but we still recovered successfully. We also found that the
+          coupler was blocking the GPS signal, therefore we needed to make some
+          adjustments for the next flight.
         </p>
         <p>
           The next flight is the full two stage, with an I175 in the booster
           staging to the G80 in the sustainer. Simulated in OpenRocket, that
           configuration gets to 876m with a maximum velocity of 109 m/s, a
           maximum acceleration of 66.7 m/s2, and a stability margin of 3.3
-          calibers.
+          calibres.
         </p>
         <ProjectSpecs specs={SIM} />
         <ProjectStatus>
           The sustainer has flown successfully on both the single deploy G80 and
           the dual deploy H flights. The full two stage stack is built and
           simulated, and is currently waiting on a launch, as the July launches
-          were cancelled due to lack of moisture fro mthe heatwave..
+          were cancelled due to lack of moisture from the heatwave.
         </ProjectStatus>
       </ProjectSection>
     </div>

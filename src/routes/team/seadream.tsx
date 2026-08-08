@@ -27,7 +27,7 @@ const TEAMS: Spec[] = [
   },
   {
     label: 'Avionics',
-    value: 'The electronics and control of telemetary, control and deployment',
+    value: 'The electronics and control of telemetry, control and deployment',
   },
 ]
 
@@ -40,7 +40,7 @@ const SUB_TEAMS: Spec[] = [
   {
     label: 'Booster',
     value:
-      'Responsible for the lower stage, with a focus on the interstage and seperation',
+      'Responsible for the lower stage, with a focus on the interstage and separation',
   },
 ]
 
@@ -58,9 +58,9 @@ function RouteComponent() {
               the way.
             </p>
             <p>
-              I am apart of the avionics team inside the group, which has a key
-              focus on the seperation, recovery and ignition electornics which
-              allows our rockets to return safetly and in one piece. We are also
+              I am a part of the avionics team inside the group, which has a key
+              focus on the separation, recovery and ignition electronics which
+              allows our rockets to return safely and in one piece. We are also
               experimenting with custom PCBs for data logging, and now more
               ambitiously, a custom flight computer with roll control
               capabilities.
@@ -97,7 +97,7 @@ function RouteComponent() {
       <ProjectSection title="Our Projects">
         <p>
           Over the last year, I have been involved in a couple projects as a
-          part of Seadream, and we have ambitions goals looking forwward. Here
+          part of Seadream, and we have ambitious goals looking forward. Here
           are some of our projects.
         </p>
         <Projects />

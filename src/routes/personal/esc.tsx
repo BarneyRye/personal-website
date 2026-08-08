@@ -60,7 +60,7 @@ function RouteComponent() {
         </p>
         <p>
           The point of the project was to develop my PCB design skills from part
-          choices and scheamtic design to PCB layout, rules and routing. The
+          choices and schematic design to PCB layout, rules and routing. The
           reason I chose an ESC for this, was it tied to my aerospace avionics
           enthusiasm, and a deviation from the sensor based flight computers I
           have worked on previously. It also serves as a base for any custom
@@ -89,7 +89,7 @@ function RouteComponent() {
           The battery directly feeds the MOSFETs source pins and such power
           phases directly. As well as powering the DRV3800 GVDD, to ensure
           proper V_gs is supplied. It is then fed through a fixed 3.3V buck
-          converter to power the MCU (through a ferrite bead for the analog
+          converter to power the MCU (through a ferrite bead for the analogue
           VDDA).
         </p>
         <p>
@@ -151,7 +151,7 @@ function RouteComponent() {
           describing the pin map for this hardware. That was a deliberate
           choice: AM32 is a mature, well-tested project, and writing my own
           commutation loop would have made the hardware harder to test. However,
-          after confirmation of successfuly rotation, custom firmware could be
+          after confirmation of successfully rotation, custom firmware could be
           written and tested.
         </p>
         <p>

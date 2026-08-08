@@ -51,7 +51,7 @@ function RouteComponent() {
       <ProjectIntro>
         <p>
           This project was a chance for me to put my academic learning into
-          practice, while developing my MatLab skills. The system is a propeller
+          practice, while developing my MATLAB skills. The system is a propeller
           on the end of a horizontal beam, pivoted on a bearing, with a rotary
           potentiometer on the pivot measuring the angle. The controller has to
           hold the beam at a commanded angle by varying the motor voltage, and

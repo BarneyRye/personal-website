@@ -63,7 +63,7 @@ function RouteComponent() {
             <p>
               The iForge is run and supervised by student volunteers called
               reps, like me, with oversight and advisory from some academic
-              staff. All the reps are split into teams, of which I am apart of
+              staff. All the reps are split into teams, of which I am a part of
               the 3D printing team, which oversees the operation and maintenance
               of the 3D printers and queue system.
             </p>
@@ -82,9 +82,9 @@ function RouteComponent() {
       <ProjectSection title="3D print team">
         <p>
           The 3DP team looks after our printers which can be found in both the
-          Mainspace and Heartspace. We have a range of printers, primarly
-          consiting of Prusa Core-Ones and MK4s, an an additional Bambu H2D with
-          AMS. Are printing capabilites offer PLA, PETG, TPU and now more
+          Mainspace and Heartspace. We have a range of printers, primarily
+          consisting of Prusa Core-Ones and MK4s, and an additional Bambu H2D
+          with AMS. Our printing capabilities offer PLA, PETG, TPU and now more
           recently mixed using the H2D with AMS and multi nozzle.
         </p>
       </ProjectSection>
@@ -107,10 +107,10 @@ function RouteComponent() {
         <p>
           The website is primarily written in typescript using prebuilt packages
           and frameworks. To talk to the printers depends on the printer
-          manafacturer and model. For instance the Prusa talk via PrusaLink api
+          manufacturer and model. For instance the Prusa talk via PrusaLink api
           or OctoPrint and Bambu talk via MQTTs or FTP. Therefore, all the
           printers are managed via a singleton, with driver classes using Object
-          Oriented Programmng (OOP) techniques for streamlining the proccess.
+          Oriented Programming (OOP) techniques for streamlining the process.
         </p>
         <p>
           Files, timelapses and the history behind them are stored separately,

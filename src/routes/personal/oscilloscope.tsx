@@ -97,13 +97,13 @@ function RouteComponent() {
           Each channel starts with five 10 megaohm resistors in series rather
           than one part. Splitting the chain means no single resistor sees the
           full input voltage, which keeps every part inside its rating, and the
-          50 megohms of series resistance keeps the input impedance high enough
+          50 megaohms of series resistance keeps the input impedance high enough
           not to load whatever is being measured.
         </p>
         <p>
           That chain forms roughly a 51:1 divider into a 1.65 V bias, so any
           value within the 40vpp gets reduced and then shifted to fit in the
-          0-3.3V range, rather than cliping or causing damage. An OPA350
+          0-3.3V range, rather than clipping or causing damage. An OPA350
           rail-to-rail op-amp then applies a fixed gain of four to bring up to
           increase resolution but keeping in the range (due to limitations of
           the op-amp), with a BAT54S clamping its output to the supply rails and
@@ -168,7 +168,7 @@ function RouteComponent() {
           analogue front end, the regulator and the USB-C connector are on the
           board; the display, the encoders, the buttons and the microSD slot all
           come out on 2.54 mm headers, so the components can be wired
-          seperately, into a case for prototyping.
+          separately, into a case for prototyping.
         </p>
         <p>
           USB-C provides power and a data path out, protected by a USBLC6-2SC6

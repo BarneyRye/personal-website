@@ -13,7 +13,7 @@ import seadreamloggersch from '@/public/seadream/seadreamloggersch.webp'
 
 export const title = 'Custom Data Logger'
 export const year = '2025 - 2026'
-export const start = '2025-10'
+export const start = '2025-11'
 export const duration = 500
 
 const REPOV1 = 'https://github.com/BarneyRye/Seadream-Rocketry-Avionics.git'
@@ -71,7 +71,7 @@ export function Project() {
           aim was to understand the system that go into a custom flight
           computer. The boards was strictly for logging data to an micro-SD and
           playing a song through an inbuilt amplifier. This project had a few
-          techincal faults, but provided a base into learning PCB and rocket
+          technical faults, but provided a base into learning PCB and rocket
           flight computer design.
         </p>
       </ProjectIntro>
@@ -86,28 +86,28 @@ export function Project() {
       <ProjectSection title="Components and Schematic">
         <p>
           The board centralises around an ESP32-S3-MINI-1U-N8, chosen for its
-          speed and ease of use. The module comes equip with 2 cores running at
-          240MHz, 8MB flash and 512kB SRAM, which is overkill for a board thats
-          only function is logging sensor data. That being said, we were able to
-          leverage the 2 cores using freeRTOS, one for sensor data and the other
-          for logging to the SD. In combination with the high clock speeds and
-          large SRAM, we were able to achive high logging rates up to 1kHz,
-          using a double buffer. It was also programmed via USB type-C, tyhrough
-          its inbuilt USB dp and dm pins.
+          speed and ease of use. The module comes equipped with 2 cores running
+          at 240MHz, 8MB flash and 512kB SRAM, which is overkill for a board
+          thats only function is logging sensor data. That being said, we were
+          able to leverage the 2 cores using freeRTOS, one for sensor data and
+          the other for logging to the SD. In combination with the high clock
+          speeds and large SRAM, we were able to achieve high logging rates up
+          to 1kHz, using a double buffer. It was also programmed via USB type-C,
+          through its inbuilt USB dp and dm pins.
         </p>
         <p>
           All three sensors of the sensors were connected via I2C for its
-          simplicty, requiring onlt 2 PCB traces to connect all the sensors up
-          to the MCU. While not the fastest choice, it was simple to implment in
-          hardware and software, with a wide range of library support in the
+          simplicity, requiring only 2 PCB traces to connect all the sensors up
+          to the MCU. While not the fastest choice, it was simple to implement
+          in hardware and software, with a wide range of library support in the
           Arduino ecosystem. The amplifier was connected using I2S protocol to
           the MCU, to allow us to stream media from our SD card for finding it
           after landing.
         </p>
         <p>
-          The pwoer phase meant we could power with either USB or battery, but
+          The power phase meant we could power with either USB or battery, but
           not both at the same time. This was due to not having schottky diodes
-          protecting each power line. In retrospec, the use of 2 LDOs was not
+          protecting each power line. In retrospect, the use of 2 LDOs was not
           needed, as we could of had 1 connected to both. The reason we didn't
           implement a schottky diode, was that we wanted to power it via a 1S
           LiPo, so the voltage drop would of been too large through a diode and
@@ -126,13 +126,13 @@ export function Project() {
         <p>
           The board is 26 x 63mm on a standard two layer 1.6mm FR4 stackup. The
           aim was to keep it narrow, to allow it to fit in a small inner
-          diameter body tube. The stackup consits of 2 layers, a signal and
+          diameter body tube. The stackup consists of 2 layers, a signal and
           ground plane. This kept the board simple, and cheaper/easier to
           manufacture.
         </p>
         <p>
           The front copper carries the bulk of the signal and power routes, as
-          well as all of the component. The singal routes run at 0.2mm width and
+          well as all of the component. The signal routes run at 0.2mm width and
           power at 4mm width. There are 0.3mm/0.6mm vias (hole/pad diameters)
           that carry the ground pins down or allows signals to be routed
           underneath on the bottom layer.
@@ -151,7 +151,7 @@ export function Project() {
           framework. This made it simple and quick to get a first iteration of
           firmware, while being reliable. We used prebuilt sensor libraries to
           speed up the development, which allowed us to get into testing of the
-          board mroe quickly.
+          board more quickly.
         </p>
         <p>
           The firmware includes two FreeRTOS tasks pinned to separate cores. One
@@ -182,7 +182,7 @@ export function Project() {
           address, so V2 probes both, and re-checks the sensor once a second in
           flight so a connection lost to vibration can be picked back up rather
           than leaving a hole in the altitude data. this was due to an incorrect
-          pin connection, which left the I2C addresss pin floating, which meant
+          pin connection, which left the I2C address pin floating, which meant
           it would switch the last bit of its address.
         </p>
         <ProjectStatus>

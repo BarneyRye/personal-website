@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import type { IconType } from 'react-icons'
 import { FaGithub } from 'react-icons/fa'
+import { cn } from '@/lib/utils'
 
 export interface Spec {
   label: string
@@ -74,21 +75,44 @@ export function ProjectFigure({
   alt,
   caption,
   sheet = false,
+  video = false,
+  portrait = false,
+  poster,
 }: {
   src: string
   alt: string
   caption: string
   sheet?: boolean
+  video?: boolean
+  portrait?: boolean
+  poster?: string
 }) {
+  const fit = portrait
+    ? 'w-auto max-h-[calc(100svh_-_var(--header-h)_-_6rem)]'
+    : 'w-full'
+
   return (
-    <figure className="space-y-3">
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        decoding="async"
-        className={`w-full rounded-lg border ${sheet ? 'bg-white p-3' : ''}`}
-      />
+    <figure className={cn('space-y-3', portrait && 'mx-auto w-fit')}>
+      {video ? (
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          poster={poster}
+          aria-label={alt}
+          className={cn('rounded-lg border bg-black', fit)}
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className={cn('rounded-lg border', fit, sheet && 'bg-white p-3')}
+        />
+      )}
       <figcaption className="max-w-prose text-muted-foreground text-sm">
         {caption}
       </figcaption>

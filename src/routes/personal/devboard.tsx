@@ -49,7 +49,7 @@ function RouteComponent() {
         </p>
         <p>
           The board has been designed to use hand soldered parts, so uses 0804
-          or higher resitor and capacitor footprints and lqfp mcu footprint.
+          or higher resistor and capacitor footprints and lqfp mcu footprint.
           This reduces cost, as PCBA is not required. The header pins are also a
           multiple of 2.54mm spaced, so are compatible with most breadboards.
         </p>
@@ -60,6 +60,7 @@ function RouteComponent() {
         alt="WizBoard PCB layout showing both copper layers"
         caption="Both copper layers of the layout. The MCU sits centrally between the two header rows, with the crystal, debug connector and reset button at one end and the USB-C connector and regulator at the other."
         sheet
+        portrait
       />
 
       <ProjectSpecs specs={SPECS} />
@@ -99,7 +100,7 @@ function RouteComponent() {
           NRST and SWO plus power. It is the same connector and pinout I used on
           the motor controller, so one ST-LINK cable works across both boards
           without rewiring anything (a 6 pin jst cable to female dupont allows
-          me to connect to my nucelo board external SWD pins). A reset button
+          me to connect to my Nucleo board external SWD pins). A reset button
           sits on NRST and BOOT0 is pulled through a resistor for bootloader
           entry.
         </p>
