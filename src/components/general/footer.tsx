@@ -12,7 +12,7 @@ const socialLinks = [
     icon: FaLinkedin,
   },
   {
-    href: 'mailto:Barneyrye@btinternet.com',
+    href: 'mailto:barneyrye1@gmail.com',
     label: 'Email',
     icon: FaEnvelope,
   },

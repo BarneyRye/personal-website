@@ -23,6 +23,7 @@ import { Route as PersonalPidRouteImport } from './routes/personal/pid'
 import { Route as PersonalOscilloscopeRouteImport } from './routes/personal/oscilloscope'
 import { Route as PersonalEscRouteImport } from './routes/personal/esc'
 import { Route as PersonalDevboardRouteImport } from './routes/personal/devboard'
+import { Route as HomeWebsiteRouteImport } from './routes/home/website'
 import { Route as HomeExperiencesRouteImport } from './routes/home/experiences'
 import { Route as HomeEducationRouteImport } from './routes/home/education'
 import { Route as HomeAboutRouteImport } from './routes/home/about'
@@ -97,6 +98,11 @@ const PersonalDevboardRoute = PersonalDevboardRouteImport.update({
   path: '/personal/devboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HomeWebsiteRoute = HomeWebsiteRouteImport.update({
+  id: '/home/website',
+  path: '/home/website',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HomeExperiencesRoute = HomeExperiencesRouteImport.update({
   id: '/home/experiences',
   path: '/home/experiences',
@@ -118,6 +124,7 @@ export interface FileRoutesByFullPath {
   '/home/about': typeof HomeAboutRoute
   '/home/education': typeof HomeEducationRoute
   '/home/experiences': typeof HomeExperiencesRoute
+  '/home/website': typeof HomeWebsiteRoute
   '/personal/devboard': typeof PersonalDevboardRoute
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
@@ -137,6 +144,7 @@ export interface FileRoutesByTo {
   '/home/about': typeof HomeAboutRoute
   '/home/education': typeof HomeEducationRoute
   '/home/experiences': typeof HomeExperiencesRoute
+  '/home/website': typeof HomeWebsiteRoute
   '/personal/devboard': typeof PersonalDevboardRoute
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
@@ -157,6 +165,7 @@ export interface FileRoutesById {
   '/home/about': typeof HomeAboutRoute
   '/home/education': typeof HomeEducationRoute
   '/home/experiences': typeof HomeExperiencesRoute
+  '/home/website': typeof HomeWebsiteRoute
   '/personal/devboard': typeof PersonalDevboardRoute
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
@@ -178,6 +187,7 @@ export interface FileRouteTypes {
     | '/home/about'
     | '/home/education'
     | '/home/experiences'
+    | '/home/website'
     | '/personal/devboard'
     | '/personal/esc'
     | '/personal/oscilloscope'
@@ -197,6 +207,7 @@ export interface FileRouteTypes {
     | '/home/about'
     | '/home/education'
     | '/home/experiences'
+    | '/home/website'
     | '/personal/devboard'
     | '/personal/esc'
     | '/personal/oscilloscope'
@@ -216,6 +227,7 @@ export interface FileRouteTypes {
     | '/home/about'
     | '/home/education'
     | '/home/experiences'
+    | '/home/website'
     | '/personal/devboard'
     | '/personal/esc'
     | '/personal/oscilloscope'
@@ -236,6 +248,7 @@ export interface RootRouteChildren {
   HomeAboutRoute: typeof HomeAboutRoute
   HomeEducationRoute: typeof HomeEducationRoute
   HomeExperiencesRoute: typeof HomeExperiencesRoute
+  HomeWebsiteRoute: typeof HomeWebsiteRoute
   PersonalDevboardRoute: typeof PersonalDevboardRoute
   PersonalEscRoute: typeof PersonalEscRoute
   PersonalOscilloscopeRoute: typeof PersonalOscilloscopeRoute
@@ -351,6 +364,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PersonalDevboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/home/website': {
+      id: '/home/website'
+      path: '/home/website'
+      fullPath: '/home/website'
+      preLoaderRoute: typeof HomeWebsiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home/experiences': {
       id: '/home/experiences'
       path: '/home/experiences'
@@ -380,6 +400,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomeAboutRoute: HomeAboutRoute,
   HomeEducationRoute: HomeEducationRoute,
   HomeExperiencesRoute: HomeExperiencesRoute,
+  HomeWebsiteRoute: HomeWebsiteRoute,
   PersonalDevboardRoute: PersonalDevboardRoute,
   PersonalEscRoute: PersonalEscRoute,
   PersonalOscilloscopeRoute: PersonalOscilloscopeRoute,

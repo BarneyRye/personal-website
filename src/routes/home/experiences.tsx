@@ -90,6 +90,21 @@ const WORK_EXPERIENCES: Experience[] = [
   },
 ]
 
+const OTHER_EXPERIENCES: Experience[] = [
+  {
+    role: 'Gold Duke of Edinburgh Award',
+    org: 'DofE Charity',
+    period: 'November 2022 - February 2026',
+    blurb: 'Successfully completing all section for the Gold DofE',
+    highlights: [
+      'Coaching at the local football academy',
+      'Aiding in a varity actions for the LINC charity, including fundraising and events',
+      'Developing of key skills, cooking, baking and driving',
+      'Showing commitment and staying healthy through regular participation at my rugby club',
+    ],
+  },
+]
+
 function ExperienceList({ experiences }: { experiences: Experience[] }) {
   return (
     <ul className="border-t">
@@ -150,6 +165,11 @@ function RouteComponent() {
       <section className="space-y-4">
         <h2 className="label-mono">Work experience</h2>
         <ExperienceList experiences={WORK_EXPERIENCES} />
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="label-mono">Other experiences</h2>
+        <ExperienceList experiences={OTHER_EXPERIENCES} />
       </section>
     </div>
   )

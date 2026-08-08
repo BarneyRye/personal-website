@@ -55,6 +55,11 @@ export const sections: Section[] = [
         to: '/home/education',
         blurb: 'Aerospace engineering at the University of Sheffield.',
       },
+      {
+        name: 'This Website',
+        to: '/home/website',
+        blurb: 'Why this website exists and how its built.',
+      },
     ],
   },
   {
