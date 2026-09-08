@@ -26,7 +26,7 @@ function RouteComponent() {
       <div className="flex flex-col items-start gap-8 sm:flex-row sm:gap-10">
         <div className="min-w-0 flex-1 space-y-4 text-muted-foreground [&>p]:max-w-prose">
           <p>
-            Hi, I&apos;m Barney, a second-year MEng Aerospace Engineering
+            Hi, I&apos;m Barney, a third-year MEng Aerospace Engineering
             student at the University of Sheffield. The degree gives me the
             broad picture of aerodynamics, structures, control and management,
             but in my own time I gravitate towards PCB and embedded design.
