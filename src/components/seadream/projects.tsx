@@ -25,7 +25,7 @@ const projects = Object.entries(modules)
     duration: module.duration ?? 300,
     Project: module.Project,
   }))
-  .sort((a, b) => a.start.localeCompare(b.start) || b.id.localeCompare(a.id))
+  .sort((a, b) => b.start.localeCompare(a.start) || b.id.localeCompare(a.id))
 
 export function Projects() {
   return (
