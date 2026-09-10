@@ -69,7 +69,8 @@ function RouteComponent() {
           fictional company AeroMAP, set out by their statement of requirement.
           We were split into a team of six, with each of us taking a lead role
           covering project management, structures, propulsion, performance,
-          control and integration, in which I focused on the control.
+          control and integration, in which I focused on the structures and
+          control as we were missing a member from the get go.
         </p>
         <p>
           The motors, flight controller and receiver was all fixed, components
