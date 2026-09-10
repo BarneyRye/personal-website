@@ -95,10 +95,10 @@ const OTHER_EXPERIENCES: Experience[] = [
     role: 'Duke of Edinburgh Award - Gold and Silver',
     org: 'DofE Charity',
     period: 'November 2020 - February 2026',
-    blurb: 'Successfully completing all section for the Gold and Silver DofE',
+    blurb: 'Successfully completing all sections for the Gold and Silver DofE',
     highlights: [
       'Coaching at the local football academy',
-      'Aiding in a varity actions for the LINC charity, including fundraising and events',
+      'Aiding in a variety actions for the LINC charity, including fundraising and events',
       'Developing of key skills, cooking, baking and driving',
       'Showing commitment and staying healthy through regular participation at my rugby club',
     ],
