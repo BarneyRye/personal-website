@@ -66,7 +66,8 @@ function RouteComponent() {
           front end, the sampling and the display all built from scratch. It
           takes up to 40 Vpp, samples on an STM32F405 running at 168 MHz, and
           draws the waveform on a 240 by 320 ILI9341 TFT. Both channels are
-          sampled continuously; one is displayed at a time.
+          sampled continuously; one is displayed at a time. It is able to
+          display up to 20kHz waveforms.
         </p>
         <p>
           The microcontroller was never the interesting part. What made this

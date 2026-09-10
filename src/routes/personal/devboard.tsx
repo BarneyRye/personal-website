@@ -48,7 +48,7 @@ function RouteComponent() {
           used for more advanced prototyping, while keeping a small form factor.
         </p>
         <p>
-          The board has been designed to use hand soldered parts, so uses 0804
+          The board has been designed to use hand soldered parts, so uses 0805
           or higher resistor and capacitor footprints and lqfp mcu footprint.
           This reduces cost, as PCBA is not required. The header pins are also a
           multiple of 2.54mm spaced, so are compatible with most breadboards.

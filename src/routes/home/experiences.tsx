@@ -67,7 +67,7 @@ const WORK_EXPERIENCES: Experience[] = [
   },
   {
     role: 'Work experience',
-    org: 'Schlumberger',
+    org: 'SLB',
     period: 'July 2023',
     blurb: 'A week of insight into the working life of an everyday engineer.',
     highlights: [
@@ -92,10 +92,10 @@ const WORK_EXPERIENCES: Experience[] = [
 
 const OTHER_EXPERIENCES: Experience[] = [
   {
-    role: 'Gold Duke of Edinburgh Award',
+    role: 'Duke of Edinburgh Award - Gold and Silver',
     org: 'DofE Charity',
-    period: 'November 2022 - February 2026',
-    blurb: 'Successfully completing all section for the Gold DofE',
+    period: 'November 2020 - February 2026',
+    blurb: 'Successfully completing all section for the Gold and Silver DofE',
     highlights: [
       'Coaching at the local football academy',
       'Aiding in a varity actions for the LINC charity, including fundraising and events',
