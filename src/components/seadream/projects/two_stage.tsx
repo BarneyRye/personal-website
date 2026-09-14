@@ -9,6 +9,7 @@ import {
 } from '@/components/project'
 import firstsustainerdd from '@/public/seadream/firstsustainerdd.mp4'
 import seadreamrocketfirst from '@/public/seadream/seadreamrocketfirst.webp'
+import seadreamtwostagelaunch from '@/public/seadream/seadreamtwostagelaunch.mp4'
 
 export const title = 'Two Stage'
 export const year = '2025 - 2026'
@@ -131,18 +132,33 @@ export function Project() {
           adjustments for the next flight.
         </p>
         <p>
-          The next flight is the full two stage, with an I175 in the booster
-          staging to the G80 in the sustainer. Simulated in OpenRocket, that
-          configuration gets to 876m with a maximum velocity of 109 m/s, a
-          maximum acceleration of 66.7 m/s2, and a stability margin of 3.3
-          calibres.
+          Our latest flight was the full stack flight, with an I175 in the
+          booster and G80 in the sustainer. The flight was a bit unstable at
+          launch causing it to tilt straight of the pad before lining up, which
+          could have been solved with a longer rod. However, we did not reach
+          the lockout angle of the sustainer ignition, which allowed for our
+          sustainer to reach an altitude of 657m as opposed to the simulated
+          apogee of 876m. That being said, we had successful recover, with the
+          booster and sustainer drogue/main parachutes deploying.
         </p>
-        <ProjectSpecs specs={SIM} />
+
+        <ProjectSection title="Simulated Flight Data">
+          <ProjectSpecs specs={SIM} />
+        </ProjectSection>
+
+        <ProjectFigure
+          src={seadreamtwostagelaunch}
+          alt="Seadream two stage launch video"
+          caption="Seadream's first two-stage rocket launching for the first time"
+          video
+          portrait
+        />
+
         <ProjectStatus>
-          The sustainer has flown successfully on both the single deploy G80 and
-          the dual deploy H flights. The full two stage stack is built and
-          simulated, and is currently waiting on a launch, as the July launches
-          were cancelled due to lack of moisture from the heatwave.
+          This project is now complete, with a successful two stage launch.
+          However, there were a few issues with the design and build stages,
+          with rushing and inconsistencies, which will be improved upon in the
+          following years.
         </ProjectStatus>
       </ProjectSection>
     </div>
