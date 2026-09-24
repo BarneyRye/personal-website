@@ -107,15 +107,15 @@ function RouteComponent() {
       <ProjectFigure
         src={buck_spice_out}
         alt="LTspice plot of output voltage against time, overshooting to about 7 V and ringing down to settle near 3.4 V after about 10 ms"
-        caption="Output voltage at start up. It overshoots to about 7 V, rings at around 3.4 kHz, and takes roughly 10 ms to settle at about 3.4 V."
+        caption="Output voltage at start-up. It overshoots to about 7 V, rings at around 3.4 kHz, and takes roughly 10 ms to settle at about 3.4 V."
         sheet
       />
 
       <ProjectSection title="The start up transient">
         <p>
           At the start of the simualtion, we can see the voltage spike up to
-          roughly 7 V. This is an issue, as it is nearly double to required
-          output, so would destroy whatever it was attached to like and MCU pin.
+          roughly 7 V. This is an issue, as it is nearly double the required
+          output, so would destroy whatever it was attached to, like an MCU pin.
           This is a real issue, and is why simualtions like these are key.
         </p>
       </ProjectSection>
