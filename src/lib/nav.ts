@@ -88,6 +88,11 @@ export const sections: Section[] = [
         to: '/personal/pid',
         blurb: 'Closed-loop control and simulation on MatLab.',
       },
+      {
+        name: 'Buck Converter SPICE',
+        to: '/personal/buck_spice',
+        blurb: 'LTspice simulation of a simplified buck converter.',
+      },
     ],
   },
   {

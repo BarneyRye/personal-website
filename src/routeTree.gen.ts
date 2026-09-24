@@ -23,6 +23,7 @@ import { Route as PersonalPidRouteImport } from './routes/personal/pid'
 import { Route as PersonalOscilloscopeRouteImport } from './routes/personal/oscilloscope'
 import { Route as PersonalEscRouteImport } from './routes/personal/esc'
 import { Route as PersonalDevboardRouteImport } from './routes/personal/devboard'
+import { Route as PersonalBuck_spiceRouteImport } from './routes/personal/buck_spice'
 import { Route as HomeWebsiteRouteImport } from './routes/home/website'
 import { Route as HomeExperiencesRouteImport } from './routes/home/experiences'
 import { Route as HomeEducationRouteImport } from './routes/home/education'
@@ -98,6 +99,11 @@ const PersonalDevboardRoute = PersonalDevboardRouteImport.update({
   path: '/personal/devboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PersonalBuck_spiceRoute = PersonalBuck_spiceRouteImport.update({
+  id: '/personal/buck_spice',
+  path: '/personal/buck_spice',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HomeWebsiteRoute = HomeWebsiteRouteImport.update({
   id: '/home/website',
   path: '/home/website',
@@ -125,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/home/education': typeof HomeEducationRoute
   '/home/experiences': typeof HomeExperiencesRoute
   '/home/website': typeof HomeWebsiteRoute
+  '/personal/buck_spice': typeof PersonalBuck_spiceRoute
   '/personal/devboard': typeof PersonalDevboardRoute
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByTo {
   '/home/education': typeof HomeEducationRoute
   '/home/experiences': typeof HomeExperiencesRoute
   '/home/website': typeof HomeWebsiteRoute
+  '/personal/buck_spice': typeof PersonalBuck_spiceRoute
   '/personal/devboard': typeof PersonalDevboardRoute
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
@@ -166,6 +174,7 @@ export interface FileRoutesById {
   '/home/education': typeof HomeEducationRoute
   '/home/experiences': typeof HomeExperiencesRoute
   '/home/website': typeof HomeWebsiteRoute
+  '/personal/buck_spice': typeof PersonalBuck_spiceRoute
   '/personal/devboard': typeof PersonalDevboardRoute
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
@@ -188,6 +197,7 @@ export interface FileRouteTypes {
     | '/home/education'
     | '/home/experiences'
     | '/home/website'
+    | '/personal/buck_spice'
     | '/personal/devboard'
     | '/personal/esc'
     | '/personal/oscilloscope'
@@ -208,6 +218,7 @@ export interface FileRouteTypes {
     | '/home/education'
     | '/home/experiences'
     | '/home/website'
+    | '/personal/buck_spice'
     | '/personal/devboard'
     | '/personal/esc'
     | '/personal/oscilloscope'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '/home/education'
     | '/home/experiences'
     | '/home/website'
+    | '/personal/buck_spice'
     | '/personal/devboard'
     | '/personal/esc'
     | '/personal/oscilloscope'
@@ -249,6 +261,7 @@ export interface RootRouteChildren {
   HomeEducationRoute: typeof HomeEducationRoute
   HomeExperiencesRoute: typeof HomeExperiencesRoute
   HomeWebsiteRoute: typeof HomeWebsiteRoute
+  PersonalBuck_spiceRoute: typeof PersonalBuck_spiceRoute
   PersonalDevboardRoute: typeof PersonalDevboardRoute
   PersonalEscRoute: typeof PersonalEscRoute
   PersonalOscilloscopeRoute: typeof PersonalOscilloscopeRoute
@@ -364,6 +377,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PersonalDevboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/personal/buck_spice': {
+      id: '/personal/buck_spice'
+      path: '/personal/buck_spice'
+      fullPath: '/personal/buck_spice'
+      preLoaderRoute: typeof PersonalBuck_spiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home/website': {
       id: '/home/website'
       path: '/home/website'
@@ -401,6 +421,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomeEducationRoute: HomeEducationRoute,
   HomeExperiencesRoute: HomeExperiencesRoute,
   HomeWebsiteRoute: HomeWebsiteRoute,
+  PersonalBuck_spiceRoute: PersonalBuck_spiceRoute,
   PersonalDevboardRoute: PersonalDevboardRoute,
   PersonalEscRoute: PersonalEscRoute,
   PersonalOscilloscopeRoute: PersonalOscilloscopeRoute,
