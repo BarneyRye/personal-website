@@ -19,6 +19,7 @@ import { Route as UniGliderRouteImport } from './routes/uni/glider'
 import { Route as TeamSolotronRouteImport } from './routes/team/solotron'
 import { Route as TeamSeadreamRouteImport } from './routes/team/seadream'
 import { Route as TeamIforgeRouteImport } from './routes/team/iforge'
+import { Route as PersonalPongRouteImport } from './routes/personal/pong'
 import { Route as PersonalPidRouteImport } from './routes/personal/pid'
 import { Route as PersonalOscilloscopeRouteImport } from './routes/personal/oscilloscope'
 import { Route as PersonalEscRouteImport } from './routes/personal/esc'
@@ -79,6 +80,11 @@ const TeamIforgeRoute = TeamIforgeRouteImport.update({
   path: '/team/iforge',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PersonalPongRoute = PersonalPongRouteImport.update({
+  id: '/personal/pong',
+  path: '/personal/pong',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PersonalPidRoute = PersonalPidRouteImport.update({
   id: '/personal/pid',
   path: '/personal/pid',
@@ -136,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
   '/personal/pid': typeof PersonalPidRoute
+  '/personal/pong': typeof PersonalPongRoute
   '/team/iforge': typeof TeamIforgeRoute
   '/team/seadream': typeof TeamSeadreamRoute
   '/team/solotron': typeof TeamSolotronRoute
@@ -157,6 +164,7 @@ export interface FileRoutesByTo {
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
   '/personal/pid': typeof PersonalPidRoute
+  '/personal/pong': typeof PersonalPongRoute
   '/team/iforge': typeof TeamIforgeRoute
   '/team/seadream': typeof TeamSeadreamRoute
   '/team/solotron': typeof TeamSolotronRoute
@@ -179,6 +187,7 @@ export interface FileRoutesById {
   '/personal/esc': typeof PersonalEscRoute
   '/personal/oscilloscope': typeof PersonalOscilloscopeRoute
   '/personal/pid': typeof PersonalPidRoute
+  '/personal/pong': typeof PersonalPongRoute
   '/team/iforge': typeof TeamIforgeRoute
   '/team/seadream': typeof TeamSeadreamRoute
   '/team/solotron': typeof TeamSolotronRoute
@@ -202,6 +211,7 @@ export interface FileRouteTypes {
     | '/personal/esc'
     | '/personal/oscilloscope'
     | '/personal/pid'
+    | '/personal/pong'
     | '/team/iforge'
     | '/team/seadream'
     | '/team/solotron'
@@ -223,6 +233,7 @@ export interface FileRouteTypes {
     | '/personal/esc'
     | '/personal/oscilloscope'
     | '/personal/pid'
+    | '/personal/pong'
     | '/team/iforge'
     | '/team/seadream'
     | '/team/solotron'
@@ -244,6 +255,7 @@ export interface FileRouteTypes {
     | '/personal/esc'
     | '/personal/oscilloscope'
     | '/personal/pid'
+    | '/personal/pong'
     | '/team/iforge'
     | '/team/seadream'
     | '/team/solotron'
@@ -266,6 +278,7 @@ export interface RootRouteChildren {
   PersonalEscRoute: typeof PersonalEscRoute
   PersonalOscilloscopeRoute: typeof PersonalOscilloscopeRoute
   PersonalPidRoute: typeof PersonalPidRoute
+  PersonalPongRoute: typeof PersonalPongRoute
   TeamIforgeRoute: typeof TeamIforgeRoute
   TeamSeadreamRoute: typeof TeamSeadreamRoute
   TeamSolotronRoute: typeof TeamSolotronRoute
@@ -349,6 +362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeamIforgeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/personal/pong': {
+      id: '/personal/pong'
+      path: '/personal/pong'
+      fullPath: '/personal/pong'
+      preLoaderRoute: typeof PersonalPongRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/personal/pid': {
       id: '/personal/pid'
       path: '/personal/pid'
@@ -426,6 +446,7 @@ const rootRouteChildren: RootRouteChildren = {
   PersonalEscRoute: PersonalEscRoute,
   PersonalOscilloscopeRoute: PersonalOscilloscopeRoute,
   PersonalPidRoute: PersonalPidRoute,
+  PersonalPongRoute: PersonalPongRoute,
   TeamIforgeRoute: TeamIforgeRoute,
   TeamSeadreamRoute: TeamSeadreamRoute,
   TeamSolotronRoute: TeamSolotronRoute,

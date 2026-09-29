@@ -93,6 +93,11 @@ export const sections: Section[] = [
         to: '/personal/buck_spice',
         blurb: 'LTspice simulation of a simplified buck converter.',
       },
+      {
+        name: 'Pong',
+        to: '/personal/pong',
+        blurb: 'A two player Pong game in C++ and SDL3.',
+      },
     ],
   },
   {
